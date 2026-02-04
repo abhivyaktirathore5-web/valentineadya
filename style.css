@@ -1,0 +1,364 @@
+:root {
+    --primary-color: #ff4d6d;
+    --background-color: #ffb3c1;
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --text-color: #590d22;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+    /* Hide default cursor to use custom one if desired, or just hiding it for the text follower effect */
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    cursor: default;
+    /* Re-enable default cursor, we will just start attached text */
+}
+
+/* Moving Hearts Background */
+.background-hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.6);
+    animation: float 6s linear infinite;
+    bottom: -20px;
+    font-size: 20px;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-105vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Glassmorphism Card */
+.container {
+    z-index: 10;
+    position: relative;
+}
+
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 3rem 4rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    text-align: center;
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: #a4133c;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.yes-btn {
+    background-color: #2dc653;
+    color: white;
+    box-shadow: 0 4px 15px rgba(45, 198, 83, 0.4);
+}
+
+.yes-btn:hover {
+    transform: scale(1.1);
+    background-color: #25a244;
+}
+
+.no-btn {
+    background-color: #d00000;
+    color: white;
+    box-shadow: 0 4px 15px rgba(208, 0, 0, 0.4);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal:not(.hidden) {
+    display: flex;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    text-align: center;
+    animation: zoomIn 0.3s ease;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-image {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.success-message {
+    font-family: 'Dancing Script', cursive;
+    color: #ff0a54;
+    font-size: 2.5rem;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Custom Cursor Text */
+#cursor-text {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    color: #800f2f;
+    font-weight: bold;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    transform: translate(15px, 15px);
+    transition: opacity 0.2s;
+}
+
+/* Corner Buttons */
+#corner-buttons.hidden {
+    display: none;
+}
+
+.corner-btn-wrapper {
+    position: fixed;
+    z-index: 200;
+}
+
+.top-left {
+    top: 20px;
+    left: 20px;
+}
+
+.top-right {
+    top: 20px;
+    right: 20px;
+}
+
+.bottom-left {
+    bottom: 20px;
+    left: 20px;
+}
+
+.bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
+
+.corner-btn {
+    width: auto;
+    height: 50px;
+    padding: 0 25px;
+    border-radius: 25px;
+    background: #ff0a54;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    box-shadow: 0 4px 15px rgba(255, 10, 84, 0.4);
+    cursor: pointer;
+    transition: transform 0.3s;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.corner-btn:hover {
+    transform: scale(1.05);
+}
+
+.hover-hint {
+    position: absolute;
+    color: #a4133c;
+    font-size: 0.9rem;
+    font-weight: bold;
+    white-space: nowrap;
+    animation: bounce 1.5s infinite;
+    pointer-events: none;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Hint positioning */
+.top-left .hover-hint {
+    top: 60px;
+    left: 10px;
+}
+
+.top-right .hover-hint {
+    top: 60px;
+    right: 10px;
+}
+
+.bottom-left .hover-hint {
+    bottom: 60px;
+    left: 10px;
+}
+
+.bottom-right .hover-hint {
+    bottom: 60px;
+    right: 10px;
+}
+
+.tooltip {
+    visibility: hidden;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #590d22;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    pointer-events: none;
+}
+
+.wide-tooltip {
+    width: 350px;
+}
+
+.corner-btn-wrapper:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Tooltip Positioning */
+/* Top-Left: show below right */
+.top-left .tooltip {
+    top: 70px;
+    left: 0;
+    transform-origin: top left;
+}
+
+/* Top-Right: show below left */
+.top-right .tooltip {
+    top: 70px;
+    right: 0;
+    transform-origin: top right;
+}
+
+/* Bottom-Left: show above right */
+.bottom-left .tooltip {
+    bottom: 70px;
+    left: 0;
+    transform-origin: bottom left;
+}
+
+/* Bottom-Right: show above left */
+.bottom-right .tooltip {
+    bottom: 70px;
+    right: 0;
+    transform-origin: bottom right;
+}
