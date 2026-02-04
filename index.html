@@ -1,78 +1,49 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For Adya â¤ï¸</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <div class="background-hearts"></div>
-
-    <!-- Custom Cursor Text -->
     <div id="cursor-text" class="cursor-text"></div>
-
     <div class="container">
         <div class="card glass">
             <h1 class="title">Adya</h1>
             <p class="subtitle">Will you be my Valentine?</p>
-
             <div class="buttons">
                 <button id="yes-btn" class="btn yes-btn">YES! â¤ï¸</button>
                 <button id="no-btn" class="btn no-btn">NO</button>
             </div>
         </div>
     </div>
-
-    <!-- Corner Buttons (Hidden initially) -->
-    <!-- Corner Buttons (Hidden initially) -->
     <div id="corner-buttons" class="hidden">
-        <!-- Button 1: Top Left -->
         <div class="corner-btn-wrapper top-left">
             <button class="corner-btn">â¤ï¸ Read Me</button>
             <div class="hover-hint">Hover me! ðŸ‘†</div>
             <div class="tooltip">You are like a rajma chawal ....<br>Rajma chawal made by mother.</div>
         </div>
-
-        <!-- Button 2: Top Right -->
         <div class="corner-btn-wrapper top-right">
             <button class="corner-btn">â¤ï¸ Read Me</button>
             <div class="hover-hint">Hover me! ðŸ‘†</div>
-            <div class="tooltip wide-tooltip">à¤®à¥‡à¤°à¤¾ à¤¦à¤¿à¤¨ à¤­à¥€ à¤¤à¥à¤®<br>à¤®à¥‡à¤°à¥€ à¤°à¤¾à¤¤ à¤­à¥€ à¤¤à¥à¤®à¥¤<br>à¤®à¥‡à¤°à¥‡ à¤¹à¤° à¤…à¤²à¥à¤«à¤¾à¤œà¤¼ à¤®à¥‡à¤‚ à¤¤à¥à¤®à¥¤<br>à¤®à¥‡à¤°à¥€
-                à¤šà¤¾à¤‚à¤¦à¤¨à¥€,<br>à¤®à¥‡à¤°à¥‡ à¤œà¥à¤—à¤¨à¥‚,<br>à¤®à¥‡à¤°à¥‡ à¤•à¤² à¤­à¥€ à¤¤à¥à¤®,<br>à¤®à¥‡à¤°à¥‡ à¤†à¤œ à¤­à¥€ à¤¤à¥à¤®à¥¤<br>à¤¤à¥à¤® à¤¹à¥‹ à¤¤à¥‹ à¤¯à¥‡ à¤¹à¤‚à¤¸à¥€ à¤¹à¥ˆà¥¤<br>à¤¯à¥‡ à¤¹à¤‚à¤¸à¥€ à¤®à¥‡à¤°à¤¾
-                à¤¸à¤¿à¤‚à¤—à¤¾à¤°à¥¤<br>à¤®à¥‡à¤°à¤¾ à¤¸à¥à¤•à¥‚à¤¨ à¤­à¥€ à¤¤à¥à¤®<br>à¤®à¥‡à¤°à¤¾ à¤¶à¥Œà¤• à¤­à¥€ à¤¤à¥à¤®à¥¤<br>à¤¬à¥‡à¤¬à¤¾à¤• à¤­à¥€ à¤¤à¥à¤®à¥¤<br>à¤¬à¥‡à¤¹à¤¿à¤¸à¤¾à¤¬ à¤­à¥€ à¤¤à¥à¤®à¥¤<br>à¤¤à¥à¤® à¤¹à¥‹ à¤®à¥‡à¤°à¥€ à¤†à¤‚à¤–à¥‹
-                à¤®à¥‡à¤‚à¥¤<br>à¤…à¤¬ à¤–à¥à¤µà¤¾à¤¬ à¤­à¥€ à¤¤à¥à¤®à¥¤<br>à¤…à¤¬ à¤–à¤¼à¥à¤¯à¤¾à¤² à¤­à¥€ à¤¤à¥à¤®à¥¤<br>à¤…à¤¬ à¤œà¤¹à¤¨ à¤®à¥‡à¤‚ à¤¹à¥‹ à¤¤à¥à¤® à¤¹à¥€ à¤¤à¥à¤®à¥¤<br>à¤®à¥‡à¤°à¥‡ à¤¹à¥‹à¤‚à¤ à¥‹ à¤ªà¤° à¤¤à¥à¤®<br>à¤®à¥‡à¤°à¥‡
-                à¤œà¥à¤²à¥à¤«à¥‹à¤‚ à¤®à¥‡à¤‚ à¤¤à¥à¤®<br>à¤®à¥‡à¤°à¥‡ à¤•à¤²à¥à¤¬ à¤®à¥‡à¤‚ à¤¤à¥à¤®<br>à¤…à¤¬ à¤œà¥‹ à¤…à¤—à¤° à¤¹à¥‹à¤—à¥‡ à¤¤à¥à¤® à¤¨à¤¹à¥€<br>à¤¤à¥‹ à¤®à¥ˆà¤‚ à¤¨à¤¹à¥€, à¤®à¥‡à¤°à¤¾ à¤…à¤¸à¥à¤¤à¤¿à¤¤à¥à¤µ à¤­à¥€ à¤¨à¤¹à¥€à¤‚à¥¤
-            </div>
+            <div class="tooltip wide-tooltip">à¤®à¥‡à¤°à¤¾ à¤¦à¤¿à¤¨ à¤­à¥€ à¤¤à¥à¤®<br>à¤®à¥‡à¤°à¥€ à¤°à¤¾à¤¤ à¤­à¥€ à¤¤à¥à¤®à¥¤<br>à¤®à¥‡à¤°à¥‡ à¤¹à¤° à¤…à¤²à¥à¤«à¤¾à¤œà¤¼ à¤®à¥‡à¤‚ à¤¤à¥à¤®à¥¤<br>à¤®à¥‡à¤°à¥€ à¤šà¤¾à¤‚à¤¦à¤¨à¥€,<br>à¤®à¥‡à¤°à¥‡ à¤œà¥à¤—à¤¨à¥‚,<br>à¤®à¥‡à¤°à¥‡ à¤•à¤² à¤­à¥€ à¤¤à¥à¤®,<br>à¤®à¥‡à¤°à¥‡ à¤†à¤œ à¤­à¥€ à¤¤à¥à¤®à¥¤<br>à¤¤à¥à¤® à¤¹à¥‹ à¤¤à¥‹ à¤¯à¥‡ à¤¹à¤‚à¤¸à¥€ à¤¹à¥ˆà¥¤<br>à¤¯à¥‡ à¤¹à¤‚à¤¸à¥€ à¤®à¥‡à¤°à¤¾ à¤¸à¤¿à¤‚à¤—à¤¾à¤°à¥¤<br>à¤®à¥‡à¤°à¤¾ à¤¸à¥à¤•à¥‚à¤¨ à¤­à¥€ à¤¤à¥à¤®<br>à¤®à¥‡à¤°à¤¾ à¤¶à¥Œà¤• à¤­à¥€ à¤¤à¥à¤®à¥¤<br>à¤¬à¥‡à¤¬à¤¾à¤• à¤­à¥€ à¤¤à¥à¤®à¥¤<br>à¤¬à¥‡à¤¹à¤¿à¤¸à¤¾à¤¬ à¤­à¥€ à¤¤à¥à¤®à¥¤<br>à¤¤à¥à¤® à¤¹à¥‹ à¤®à¥‡à¤°à¥€ à¤†à¤‚à¤–à¥‹ à¤®à¥‡à¤‚à¥¤<br>à¤…à¤¬ à¤–à¥à¤µà¤¾à¤¬ à¤­à¥€ à¤¤à¥à¤®à¥¤<br>à¤…à¤¬ à¤–à¤¼à¥à¤¯à¤¾à¤² à¤­à¥€ à¤¤à¥à¤®à¥¤<br>à¤…à¤¬ à¤œà¤¹à¤¨ à¤®à¥‡à¤‚ à¤¹à¥‹ à¤¤à¥à¤® à¤¹à¥€ à¤¤à¥à¤®à¥¤<br>à¤®à¥‡à¤°à¥‡ à¤¹à¥‹à¤‚à¤ à¥‹ à¤ªà¤° à¤¤à¥à¤®<br>à¤®à¥‡à¤°à¥‡ à¤œà¥à¤²à¥à¤«à¥‹à¤‚ à¤®à¥‡à¤‚ à¤¤à¥à¤®<br>à¤®à¥‡à¤°à¥‡ à¤•à¤²à¥à¤¬ à¤®à¥‡à¤‚ à¤¤à¥à¤®<br>à¤…à¤¬ à¤œà¥‹ à¤…à¤—à¤° à¤¹à¥‹à¤—à¥‡ à¤¤à¥à¤® à¤¨à¤¹à¥€<br>à¤¤à¥‹ à¤®à¥ˆà¤‚ à¤¨à¤¹à¥€, à¤®à¥‡à¤°à¤¾ à¤…à¤¸à¥à¤¤à¤¿à¤¤à¥à¤µ à¤­à¥€ à¤¨à¤¹à¥€à¤‚à¥¤</div>
         </div>
-
-        <!-- Button 3: Bottom Left -->
         <div class="corner-btn-wrapper bottom-left">
             <button class="corner-btn">â¤ï¸ Read Me</button>
             <div class="hover-hint">Hover me! ðŸ‘‡</div>
             <div class="tooltip">à¤¦à¤¿à¤¨ à¤•à¤¾ à¤ªà¤¹à¤²à¤¾ à¤–à¥à¤¯à¤¾à¤² <br>à¤”à¤° à¤°à¤¾à¤¤ à¤•à¤¾ à¤†à¥™à¤¿à¤°à¥€ à¤–à¥à¤µà¤¾à¤¬ à¤¹à¥‹ à¤¤à¥à¤®à¥¤</div>
         </div>
-
-        <!-- Button 4: Bottom Right -->
         <div class="corner-btn-wrapper bottom-right">
             <button class="corner-btn">â¤ï¸ Read Me</button>
             <div class="hover-hint">Hover me! ðŸ‘‡</div>
-            <div class="tooltip wide-tooltip">This is for you. Since I couldn't write as good as before but you made me
-                write something for you because you kept forgetting how strong you really are. And I want you to see
-                beyond the obstacle you think is everything on the way. I want you to look at yourself just not with
-                disappointed but how much you have grown and a lot that you could do if you look at your own strength
-                not how strong time is getting on you. I love you and I want you to love yourself too. â¤ï¸</div>
+            <div class="tooltip wide-tooltip">This is for you. Since I couldn't write as good as before but you made me write something for you because you kept forgetting how strong you really are. And I want you to see beyond the obstacle you think is everything on the way. I want you to look at yourself just not with disappointed but how much you have grown and a lot that you could do if you look at your own strength not how strong time is getting on you. I love you and I want you to love yourself too. â¤ï¸</div>
         </div>
     </div>
-
-    <!-- Success Modal -->
     <div id="modal" class="modal hidden">
         <div class="modal-content glass">
             <span class="close">&times;</span>
@@ -80,9 +51,7 @@
             <h2 class="success-message">YAY, I knew you will say YESSSS! â¤ï¸</h2>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
