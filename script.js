@@ -46,10 +46,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Change message every time mouse moves significantly or on a timer? 
     // Let's change it based on distance moved or just randomly every few seconds
+    // Initial message
+    cursorText.textContent = messages[0];
+    cursorText.style.opacity = '1';
+
+    // Change message cycler
     let messageIndex = 0;
     const messageInterval = setInterval(() => {
-        cursorText.textContent = messages[messageIndex];
-        messageIndex = (messageIndex + 1) % messages.length;
+        if (cursorText) {
+            cursorText.textContent = messages[messageIndex];
+            messageIndex = (messageIndex + 1) % messages.length;
+        }
     }, 2000);
 
     // "No" Button Interaction
